@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBKWdlgehYvpZqL8M_KE9ym0jKDkvVow3g'
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "geoposition"
 ]
 
 MIDDLEWARE = [
@@ -54,13 +55,12 @@ ROOT_URLCONF = 'BaltimoreHack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/jinja2')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
-        'OPTIONS': {'environment': 'myproject.jinja2.Environment',}, 
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
