@@ -1,7 +1,42 @@
 <html>
   <title>Youth Resources</title>
   <body>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Where to find Help</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var balt = {lat:39.2904 ,lng:-76.6122};
+        var fgyec = {lat:39.3060, lng:-76.6280}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: balt
+        });
+        var marker = new google.maps.Marker({
+          position: balt,
+          map: map
+        });
+        var marker = new google.maps.Marker({
+          position: fgyec,
+          map:map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDilTSWC6HSk6x8RGbpjfqj2TChAclgo7E&callback=initMap">
+    </script>
+  </body>
+</html>
   </body>
 
 </html>
